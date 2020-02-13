@@ -32,6 +32,8 @@ public class Matrix {
 	}
 
 	public double getNum(int x, int y) {
+		System.out.println("x & y are ( " + x + ", " + y + " )");
+		System.out.println("matrix + x & y are ( " + matrix.length + ", " + matrix[0].length + " )");
 		return matrix[x][y];
 	}
 

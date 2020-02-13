@@ -1,36 +1,34 @@
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.event.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.swing.*;
 
-public class Window extends JPanel {
-	private Engine3D t;
+@SuppressWarnings("serial")
+public class Window extends JFrame {
 
 	public Window() {
-		setBackground(Color.white);
-		t = new Engine3D();
+		super();
+		//add update here
 	}
-	
-	public Window(Color backColor) {
-		setBackground(backColor);
-	}
-	
-	
-	
 
-	public void paintComponent(Graphics g) {
-		super.paintComponent(g);
+	public void init() {
+		setTitle("Render");
+		setSize(300, 200);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		ArrayList<Point3D> p = new ArrayList<Point3D>( Arrays.asList(new Point3D[] { new Point3D(0, 0, 0),
+				new Point3D(1, 0, 0), new Point3D(0, 1, 0), new Point3D(0, 0, 1), }));
+		
+		getContentPane().add(new ViewModel(p));
 
 	}
 
-	
-
-	public class PanelListener extends MouseAdapter {
-		public void mousePressed(MouseEvent e) {
-
-			repaint();
-		}
+	public void Run() {
+		setVisible(true);
 	}
 
+//	@Override
+//	public void setSize(int x, int y) {
+//		super.setSize(x, y);
+//	}
 }
