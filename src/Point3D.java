@@ -10,4 +10,14 @@ public class Point3D extends Point2D {
 	public double getZ() {
 		return z;
 	}
+	
+	public String toString()
+	{
+		String[] temp = super.toString().split(" ");
+		String str = "";
+		for (int i = 0 ; i < temp.length - 1; i++) {
+			str += temp[i] + " ";
+		}
+		return (str + ", " + getZ() + " )");
+	}
 }
