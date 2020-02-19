@@ -14,4 +14,9 @@ public class Point2D {
 	public double getY() {
 		return y;
 	}
+	
+	public String toString()
+	{
+		return ("( " + getX() + ", " + getY() + " )");
+	}
 }

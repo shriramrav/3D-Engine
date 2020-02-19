@@ -32,8 +32,6 @@ public class Matrix {
 	}
 
 	public double getNum(int x, int y) {
-		System.out.println("x & y are ( " + x + ", " + y + " )");
-		System.out.println("matrix + x & y are ( " + matrix.length + ", " + matrix[0].length + " )");
 		return matrix[x][y];
 	}
 
@@ -62,5 +60,22 @@ public class Matrix {
 
 	public double formatDouble(double temp) {
 		return (Double.valueOf(String.format("%.2f", temp)));
+	}
+
+	public String toString() {
+		String str = "";
+		for (int u = 0; u < getY(); u++) {
+			str += "[ ";
+			for (int i = 0; i < getX(); i++) {
+				str += (String.valueOf(formatDouble(matrix[i][u])));
+				if (i != (getX() - 1))
+					str += (", ");
+			}
+			str += " ]";
+			if (u != (getY() - 1))
+				str += (",");
+			str += "\n";
+		}
+		return str;
 	}
 }
